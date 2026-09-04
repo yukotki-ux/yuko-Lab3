@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -8,22 +9,22 @@ int main() {
 
     double price;
 
-    cout << 'Enter the price of an item: ';
+    
+    cout << fixed << setprecision(2);
+    cout << "\nEnter the price of an item: ";
     cin >> price;
 
     if(price < 0) {
-        cout << ""
+        cout << "\nThe price shouldn't be minus!";
+        return 0;
     }
 
-
     double taxAmount = price * rate;
-    totalAmount = taxAmount + price;
+    double totalAmount = taxAmount + price;
 
-    cout << "Original Price: " << price << endl;
-    cout << "Sales Tax: " << taxAmount << endl;
-    cout << "Total Cost: " << totalAmount << endl;
-
-
+    cout << "Original Price: " << "$ " << price << endl;
+    cout << "Sales Tax: " << "$ "<< taxAmount << endl;
+    cout << "Total Cost: " << "$ "<< totalAmount << endl;
 
     return 0;
 }
