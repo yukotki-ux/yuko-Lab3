@@ -16,15 +16,19 @@ int main() {
 
     int totalSlicesPizza = numOfPeople * slicesPerPerson;
     int totalWholePizza = totalSlicesPizza / slicesPerPizza;
+    int fullPizzaEaten = totalWholePizza;
 
     if(totalSlicesPizza % slicesPerPizza != 0){
-        totalSlicesPizza ++;
+        totalWholePizza++;
+        fullPizzaEaten = totalWholePizza - 1;
     }
 
-    int leftOverSlices = totalWholePizza * slicesPerPizza % totalSlicesPizza;
+    int leftOverSlices = slicesPerPizza -  (totalSlicesPizza % slicesPerPizza);
+    int additionalSlices = slicesPerPizza - leftOverSlices;
 
     cout << "\n\nYou will need to order " << totalWholePizza << " pizzas.";
-    cout << "\nThere will be " << leftOverSlices << " leftover slices." << endl;
-    
+    cout << "\nThere will be " << leftOverSlices << " leftover slices.";
+    cout << "\nIt means " << fullPizzaEaten << " full pizzas will be eaten and " << additionalSlices << " slices will be needed from the last pizza.";
+
     return 0;
 }
