@@ -15,7 +15,11 @@ int main() {
     cin >> slicesPerPerson;
 
     int totalSlicesPizza = numOfPeople * slicesPerPerson;
-    int totalWholePizza = totalSlicesPizza / slicesPerPizza + 1;
+    int totalWholePizza = totalSlicesPizza / slicesPerPizza;
+
+    if(totalSlicesPizza % slicesPerPizza != 0){
+        totalSlicesPizza ++;
+    }
 
     int leftOverSlices = totalWholePizza * slicesPerPizza % totalSlicesPizza;
 
